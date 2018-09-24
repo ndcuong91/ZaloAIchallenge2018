@@ -1,0 +1,1 @@
+/home/prdcv/PycharmProjects/gvh205/caffe_1.0/build/tools/caffe test -model /home/prdcv/Desktop/zaloAIchallenge/landmark/models/resnet_152/ResNet_152_train_val.prototxt -weights /home/prdcv/Desktop/zaloAIchallenge/landmark/models/resnet_152/snapshot/resnet_iter_400000.caffemodel -gpu 0
