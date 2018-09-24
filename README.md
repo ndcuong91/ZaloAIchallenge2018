@@ -9,7 +9,7 @@
 + Delete corrupted files (0kb)
 + Delete file with wrong format (.png, .bmp but renamed as .jpg in dataset)
 + Delete duplicate files
-+ Use *preprocessing_data.py* to do all of above stuff
++ Use *preprocessing_data.py* to do all of above
 + Use *01.create_train_val* to separate train/val folder with ratio of 92%/8%
 + No data augmentation
 
