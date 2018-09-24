@@ -1,5 +1,5 @@
 # ZaloAIchallenge2018 - Landmark Identification
-**The result should be on top-2 of competition with error=0.63 (23/09/2018)** 
+**The result should be on top-2 of competition with error=0.063 (23/09/2018)** 
 ## Prerequisite:
 + Caffe installation [v1.0](https://github.com/BVLC/caffe/releases/tag/1.0)
 + [Dataset](https://challenge.zalo.ai/portal/landmark/data) 
@@ -24,4 +24,4 @@
 + Use *eval_val_test.py* to evaluate accuracy on val data and make submission
 ### error:
 1) googlenet_reduce: 0.17
-2) Resnet_152: 0.63
+2) Resnet_152: 0.063
