@@ -1,1 +1,0 @@
-# ZaloAIchallenge2018
