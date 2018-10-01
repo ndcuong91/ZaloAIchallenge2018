@@ -1,5 +1,5 @@
 # ZaloAIchallenge2018 - Landmark Identification
-**Error=0.06429 (Should be on top-2 of Final Leader Board)** 
+**Error=0.06429 on Public dataset** 
 ## Prerequisite:
 + Caffe installation [v1.0](https://github.com/BVLC/caffe/releases/tag/1.0)
 + [Dataset](https://challenge.zalo.ai/portal/landmark/data) 
