@@ -4,7 +4,7 @@
 + top3: 427/6968  = 0.0613
 + top1: 1004/6968 = 0.1828
 
-**Error=0.06429 on Public dataset** 
+**Error=0.06429 on Public dataset (top3)** 
 ## Prerequisite:
 + Caffe installation [v1.0](https://github.com/BVLC/caffe/releases/tag/1.0)
 + [Dataset](https://challenge.zalo.ai/portal/landmark/data) 
