@@ -1,8 +1,14 @@
 # ZaloAIchallenge2018 - Landmark Identification
-**Val-dataset errors (6968 imgs = 8% of training data) -Resnet_152:**
+**Val-dataset errors (6968 imgs = 8% of training data)**
+**Resnet_152-Caffe:**
 + top5: 243/6968  = 0.0349
 + top3: 427/6968  = 0.0613
 + top1: 1004/6968 = 0.1828
+
+**Resnet_152-Mxnet:**
++ top5: 125/6968  = 0.01794
++ top3: 164/6968  = 0.0235
++ top1: 485/6968 = 0.0696
 
 **Error=0.06429 on Public dataset (top3)** 
 ## Prerequisite:
