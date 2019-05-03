@@ -11,6 +11,11 @@
 + top3: 164/6968  = 0.0235
 + top1: 485/6968 = 0.0696
 
+**Resnext50_32x4d-Mxnet:**
++ top5: 65/6968  = 0.00933
++ top3: 118/6968  = 0.01693
++ top1: 429/6968 = 0.06157
+
 **Error=0.06429 on Public dataset (top3)** 
 ## Prerequisite:
 + Caffe installation [v1.0](https://github.com/BVLC/caffe/releases/tag/1.0)
