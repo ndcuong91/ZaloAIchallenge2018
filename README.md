@@ -31,6 +31,7 @@
 + Use *preprocessing_data.py* to do all of above
 + Use *01.create_train_val* to separate train/val folder with ratio of 92%/8%
 + No data augmentation
++ 
 
 ## Training
 + Use *04.1.train.sh* or "04.2.train_resume.sh* to train from scratch (googlenet_reduce) or fine-tunning model (resnet_152)
