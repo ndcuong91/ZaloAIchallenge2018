@@ -5,18 +5,20 @@
 + top5: 243/6968  = 0.0349
 + top3: 427/6968  = 0.0613
 + top1: 1004/6968 = 0.1828
++ public_dataset(top3): 0.06429
 
 **Resnet_152-Mxnet:**
 + top5: 125/6968  = 0.01794
 + top3: 164/6968  = 0.0235
 + top1: 485/6968 = 0.0696
++ public_dataset(top3): 0.01846
 
 **Resnext50_32x4d-Mxnet:**
 + top5: 65/6968  = 0.00933
 + top3: 118/6968  = 0.01693
 + top1: 429/6968 = 0.06157
++ public_dataset(top3): 0.01665
 
-**Error=0.06429 on Public dataset (top3)** 
 ## Prerequisite:
 + Caffe installation [v1.0](https://github.com/BVLC/caffe/releases/tag/1.0)
 + [Dataset](https://challenge.zalo.ai/portal/landmark/data) 
@@ -39,6 +41,3 @@
 
 ## Testing
 + Use *eval_val_test.py* to evaluate accuracy on val data and make submission
-### error:
-1) googlenet_reduce: 0.17
-2) Resnet_152: 0.06429
