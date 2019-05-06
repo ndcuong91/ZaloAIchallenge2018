@@ -33,7 +33,7 @@
 + train: 79640 imgs
 + val: 6968 imgs
 + public_test: 14356 imgs
-+ No data augmentation
++ augmentation (Flip vertical, Color Jitter, Lighting)
 
 ## Training
 + Use *04.1.train.sh* or "04.2.train_resume.sh* to train from scratch (googlenet_reduce) or fine-tunning model (resnet_152)
