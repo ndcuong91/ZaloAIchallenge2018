@@ -2,24 +2,6 @@
 **Repo có chứa source code cho cuộc thi Zalo Landmark do Zalo tổ chức năm 2018.
 Đề bài yêu cầu phân loại các bức ảnh cho sẵn vào 103 địa điểm tương ứng với 103 địa danh nổi tiếng ở Việt Nam như vịnh Hạ Long, chùa Bái Đính, ga Hà Nội... Phương pháp đánh giá kết quả là dựa trên top-3 accuracy**
 
-**Resnet_152-Caffe:**
-+ top5: 243/6968  = 0.0349
-+ top3: 427/6968  = 0.0613
-+ top1: 1004/6968 = 0.1828
-+ public_dataset(top3): 0.06429
-
-**Resnet_152-Mxnet:**
-+ top5: 125/6968  = 0.01794
-+ top3: 164/6968  = 0.0235
-+ top1: 485/6968 = 0.0696
-+ public_dataset(top3): 0.01846
-
-**Resnext50_32x4d-Mxnet:**
-+ top5: 65/6968  = 0.00933
-+ top3: 118/6968  = 0.01693
-+ top1: 429/6968 = 0.06157
-+ public_dataset(top3): 0.01665
-
 ## Environments:
 + Ubuntu 16.04
 + Cuda 9.0
@@ -54,14 +36,40 @@ Dưới đây là distribution **dự đoán** của tập private test, so sán
 
 Qua đó có thể thấy distribution của tập Public test giống với tập TrainVal, và khác khá nhiều tập Private Test. Đó là lý do tại sao accuracy trong LB thì cao nhưng trong Final LB thì lại thấp hơn nhiều.
 
-+ augmentation (Flip vertical, Color Jitter, Lighting)
+## Data Augmentation + TTA (Test Time Augment)
++ Flip vertical
++ Random crop (training), Center crop (testing)
++ Color Jitter
++ Lighting Adjustment
 
 ## Training
-+ Use *04.1.train.sh* or "04.2.train_resume.sh* to train from scratch (googlenet_reduce) or fine-tunning model (resnet_152)
 ### Models
-1) googlenet_reduce (forward time ~ 20ms)
-2) resnet_152 (ft~60ms) [Caffemodel](https://drive.google.com/drive/u/0/folders/1PYXLmVz0jFPRdQwtm62pkZoUgm5T6Hzq)
-+ Training time for model 1 is about 16hours (200000 iters), model 2 is 36 hours (400000 iters)
++ resnet_152 [Caffemodel](https://drive.google.com/drive/u/0/folders/1PYXLmVz0jFPRdQwtm62pkZoUgm5T6Hzq)
++ ResNext50_32x4D
++ Use "04.2.train_resume.sh* to  fine-tunning model resnet_152 in Caffe
 
-## Testing
+### Model Ensemble
++ Resnet_152+ResNext50_32x4D
+
+## Prediction
 + Use *eval_val_test.py* to evaluate accuracy on val data and make submission
+
+## Result
+
+**Resnet_152-Caffe:**
++ top5: 243/6968  = 0.0349
++ top3: 427/6968  = 0.0613
++ top1: 1004/6968 = 0.1828
++ public_dataset(top3): 0.06429
+
+**Resnet_152-Mxnet:**
++ top5: 125/6968  = 0.01794
++ top3: 164/6968  = 0.0235
++ top1: 485/6968 = 0.0696
++ public_dataset(top3): 0.01846
+
+**Resnext50_32x4d-Mxnet:**
++ top5: 65/6968  = 0.00933
++ top3: 118/6968  = 0.01693
++ top1: 429/6968 = 0.06157
++ public_dataset(top3): 0.01665
