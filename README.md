@@ -1,5 +1,6 @@
 # ZaloAIchallenge2018 - Landmark Identification
-**Val-dataset errors (6968 imgs = 8% of training data)**
+**Repo có chứa source code cho cuộc thi Zalo Landmark do Zalo tổ chức năm 2018.
+Đề bài yêu cầu phân loại các bức ảnh cho sẵn vào 103 địa điểm tương ứng với 103 địa danh nổi tiếng ở Việt Nam như vịnh Hạ Long, chùa Bái Đính, ga Hà Nội... Phương pháp đánh giá kết quả là dựa trên top-3 accuracy**
 
 **Resnet_152-Caffe:**
 + top5: 243/6968  = 0.0349
@@ -19,20 +20,40 @@
 + top1: 429/6968 = 0.06157
 + public_dataset(top3): 0.01665
 
-## Prerequisite:
+## Environments:
++ Ubuntu 16.04
++ Cuda 9.0
++ Cudnn 7
++ OpenCV 3
++ Python 2.7
++ Caffe, MXnet, GluonCV
 + Caffe installation [v1.0](https://github.com/BVLC/caffe/releases/tag/1.0)
 + [Dataset](https://challenge.zalo.ai/portal/landmark/data) 
 
-## Preparation
-### Data
-+ Delete corrupted files (0kb)
-+ Delete file with wrong format (.png, .bmp but renamed as .jpg in dataset)
-+ Delete duplicate files
-+ Use *preprocessing_data.py* to do all of above
-+ Use *01.create_train_val* to separate train/val folder with ratio of 92%/8%
-+ train: 79640 imgs
-+ val: 6968 imgs
-+ public_test: 14356 imgs
+## EDA (Exploratory Data Analysis)
++ Xóa những file bị corrupt (0kb)
++ Xóa file bị nhầm format (.png, .bmp, .tiff nhưng được format thành .jpg)
++ Có nhiều file giống hệt nhau xuất hiện trong nhiều class khác nhau, mình chọn giải pháp xóa hết các file đó đi  
++ dùng script *preprocessing_data.py* để làm tất cả các bước trên. Sau đó, tập TrainVal sẽ còn lại 86608 imgs
++ Tiếp theo, dùng script *01.create_train_val* để chia thành 2 tập Train và Validation với tỉ lệ 92%/8%
++ Số ảnh tập Train: 79640 imgs
++ Số ảnh tập Validation: 6968 imgs
+Dưới đây là distribution của tập TrainVal, qua đó có thể thấy đây là **imbalance data**
+
+![TrainVal1_distribution](https://user-images.githubusercontent.com/17918935/58390109-be05b300-8059-11e9-8edf-15f82e6ca6b2.jpg)
+
++ Tập Public test có 14356 imgs
+Dưới đây là distribution **dự đoán** của tập public test, so sánh với tập TrainVal
+
+![TrainVal_origin compare public_test_top3_prob_distribution](https://user-images.githubusercontent.com/17918935/58390395-5486a400-805b-11e9-9e4c-ec70030f0402.jpg)
+
++ Tập Private test có 14759 imgs
+Dưới đây là distribution **dự đoán** của tập private test, so sánh với tập public test
+
+![public_test_top3_prob_vs_private_test_top3_prob_distribution](https://user-images.githubusercontent.com/17918935/58390472-a16a7a80-805b-11e9-94e7-424d11915d14.jpg)
+
+Qua đó có thể thấy distribution của tập Public test giống với tập TrainVal, và khác khá nhiều tập Private Test. Đó là lý do tại sao accuracy trong LB thì cao nhưng trong Final LB thì lại thấp hơn nhiều.
+
 + augmentation (Flip vertical, Color Jitter, Lighting)
 
 ## Training
