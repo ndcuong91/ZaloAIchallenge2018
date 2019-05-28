@@ -57,7 +57,7 @@ Qua đó có thể thấy distribution của tập Public test giống với t�
 
 ## Feature Embedding using t-SNE
 
-Mình có visualize lại các cái embedding feature của 1 subset trong Train set với mạng ResNext50_32x4D. Qua đó ta thấy một số class có các embedded rất gần nhau như 58, 65 hoặc 64,51.
+Mình có visualize lại các cái embedding feature của 1 subset trong Train set với mạng ResNext50_32x4D. Qua đó ta thấy bên cạnh 1 số class được phân tách rất tốt như 49,86,102 thì có một số class có các embedded rất gần nhau như 58, 65 hoặc 64,51. Ngoài ra vẫn có khá nhiều nhiễu trong 1 số cụm chứng tỏ dataset vẫn còn nhiều nhiễu hoặc model phân loại chưa tốt. 
 
 ![val_github](https://user-images.githubusercontent.com/17918935/58447786-c7f9e580-812f-11e9-9ded-dbaef280b492.gif)
 
