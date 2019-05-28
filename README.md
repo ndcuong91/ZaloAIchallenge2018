@@ -67,4 +67,4 @@ Mình có visualize lại các cái embedding feature của 1 subset trong Train
 + Phân nhóm lại các class tương tự nhau (nhà thờ, biển, vườn quốc gia...), classify các nhóm tương tự đó rồi mới tách thành các class nhỏ hơn
 
 ## Result
-**LB: 0.0147 (top 30)**
+**LB: 0.00926 (top 4)**
