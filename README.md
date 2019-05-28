@@ -54,5 +54,12 @@ Qua đó có thể thấy distribution của tập Public test giống với t�
 ## Prediction
 + Use *eval_val_test.py* to evaluate accuracy on val data and make submission
 
+## Feature Embedding using t-SNE
+
+Mình có visualize lại các cái embedding feature của 1 subset trong Train set dùng ResNext. Qua đó ta thấy một số class có các embedded rất gần nhau như 58, 65 hoặc 64,51. Cần có thời gian xem xét kỹ hơn 2 class đó để có các chiến thuật phân tách chúng t 
+
+![val_github](https://user-images.githubusercontent.com/17918935/58447786-c7f9e580-812f-11e9-9ded-dbaef280b492.gif)
+
+
 ## Result
 **LB: 0.0147 (top 30)**
