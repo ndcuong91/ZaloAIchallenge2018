@@ -49,17 +49,22 @@ Qua đó có thể thấy distribution của tập Public test giống với t�
 + Use "04.2.train_resume.sh* to  fine-tunning model resnet_152 in Caffe
 
 ### Model Ensemble
-+ Resnet_152+ResNext50_32x4D +gmean
++ 5 TTA with amean
++ Resnet_152+ResNext50_32x4D with gmean
 
 ## Prediction
 + Use *eval_val_test.py* to evaluate accuracy on val data and make submission
 
 ## Feature Embedding using t-SNE
 
-Mình có visualize lại các cái embedding feature của 1 subset trong Train set dùng ResNext. Qua đó ta thấy một số class có các embedded rất gần nhau như 58, 65 hoặc 64,51. Cần có thời gian xem xét kỹ hơn 2 class đó để có các chiến thuật phân tách chúng t 
+Mình có visualize lại các cái embedding feature của 1 subset trong Train set với mạng ResNext50_32x4D. Qua đó ta thấy một số class có các embedded rất gần nhau như 58, 65 hoặc 64,51.
 
 ![val_github](https://user-images.githubusercontent.com/17918935/58447786-c7f9e580-812f-11e9-9ded-dbaef280b492.gif)
 
+## Một số ý tưởng trong tương lai
++ Phân tích t-SNE để biết được class nào dễ nhầm với nhau. Từ đó thử thêm các chiến thuật khác phân tách chúng.
++ Training với input size lớn hơn. Hiện tại mình chỉ dùng 224 do phần cứng giới hạn.
++ Phân nhóm lại các class tương tự nhau (nhà thờ, biển, vườn quốc gia...), classify các nhóm tương tự đó rồi mới tách thành các class nhỏ hơn
 
 ## Result
 **LB: 0.0147 (top 30)**
