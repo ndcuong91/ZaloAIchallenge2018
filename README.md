@@ -2,6 +2,9 @@
 **Repo có chứa source code cho cuộc thi Zalo Landmark do Zalo tổ chức năm 2018.
 Đề bài yêu cầu phân loại các bức ảnh cho sẵn vào 103 địa điểm tương ứng với 103 địa danh nổi tiếng ở Việt Nam như vịnh Hạ Long, chùa Bái Đính, ga Hà Nội... Phương pháp đánh giá kết quả là dựa trên top-3 accuracy**
 
+## Result
+**LB: 0.00926 (top 4)**
+
 ## Environments:
 + Ubuntu 16.04
 + Cuda 9.0
@@ -65,6 +68,3 @@ Mình có visualize lại các cái embedding feature của 1 subset trong Train
 + Phân tích t-SNE để biết được class nào dễ nhầm với nhau. Từ đó thử thêm các chiến thuật khác phân tách chúng.
 + Training với input size lớn hơn. Hiện tại mình chỉ dùng 224 do phần cứng giới hạn.
 + Phân nhóm lại các class tương tự nhau (nhà thờ, biển, vườn quốc gia...), classify các nhóm tương tự đó rồi mới tách thành các class nhỏ hơn
-
-## Result
-**LB: 0.00926 (top 4)**
